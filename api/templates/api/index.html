@@ -1,0 +1,20 @@
+{% extends "api/layout.html" %}
+
+{% block body %}
+<h1>Welcom {{ request.user.username }}</h1> 
+
+<ul>
+    <li>Last Name: {{ request.user.last_name }}</li>
+    <li>Email: {{ request.user.email }}</li>
+   
+    <li>Token: {{ request.user.auth_token.key }}</li>
+   
+</ul>
+
+<!-- <form action="{% url 'getToken' %}" method="POST">
+    <button type="submit" class="btn btn-primary" >Get Token</button>
+</form> -->
+
+
+<a href="{% url 'logout' %}">log out</a>
+{% endblock %} 
